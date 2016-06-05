@@ -113,11 +113,30 @@ class TileView extends React.Component {
       classArray.push('isMoving');
     }
     var classes = classArray.join(' ');
+    var catUrl = assignImage(tile.value);
     return (
-      <span className={classes}>{tile.value}</span>
+      <img className={classes} src={catUrl}/>
     );
   }
 }
+
+var assignImage = function(value) {
+  var output;
+  switch(value) {
+    case 2: output = 'http://i.imgur.com/MkzMwUU.gif'; break;
+  	case 4: output = 'http://i.imgur.com/9RbjTCX.gif'; break;
+    case 8: output = 'http://i.imgur.com/jNHH8A5.gif'; break;
+    case 16: output = 'http://i.imgur.com/MK1CPVy.gif'; break;
+    case 32: output = 'http://i.imgur.com/yS1wOAI.gif'; break;
+    case 64: output = 'http://i.imgur.com/HJ3Zzm1.gif'; break;
+    case 128: output = 'http://i.imgur.com/U8ZYXSU.gif'; break;
+    case 256: output = 'http://i.imgur.com/ekulTtX.gif'; break;
+    case 512: output = 'http://i.imgur.com/hvkvYjc.gif'; break;
+    case 1024: output = 'http://i.imgur.com/Mjc0ddH.gif'; break;
+    case 2048: output = 'http://i.imgur.com/rH6HG5e.gif'; break;
+  }
+  return output
+}	 
 
 var GameEndOverlay = ({board, onRestart}) => {
   var contents = '';
