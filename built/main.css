@@ -29,7 +29,7 @@ body {
   width: 440px;
   height: 440px;
   padding: 5px;
-  background-color: #baa;
+  background-color: black;
   border-radius: 7px;
   outline: none;
   position: relative; }
@@ -54,7 +54,7 @@ body {
   border-radius: 7px;
   font-family: "Clear Sans";
   color: #766;
-  background-color: #dcb; }
+  background-color: #4F5E6D; }
 
 /*.tile0 {
   background-color: #dcb; }

@@ -68,6 +68,7 @@ class BoardView extends React.Component {
         {cells}
         {tiles}
         <GameEndOverlay board={this.state.board} onRestart={this.restartGame.bind(this)} />
+        <Scoreboard board={this.state.board} onRestart={this.restartGame.bind(this)} />
       </div>
     );
   }
@@ -154,6 +155,13 @@ var GameEndOverlay = ({board, onRestart}) => {
       <button className="tryAgain" onClick={onRestart} onTouchEnd={onRestart}>Try again</button>
     </div>
   );
+};
+
+var Scoreboard = ({board, onRestart}) => {
+  if (!board) return;
+  return (
+    <h1>Score: {board.total}</h1>  
+  )
 };
 
 ReactDOM.render(<BoardView />, document.getElementById('boardDiv'));

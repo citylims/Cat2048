@@ -21,6 +21,7 @@ var Tile = function Tile(value, row, column) {
   this.oldColumn = -1;
   this.markForDeletion = false;
   this.mergedInto = null;
+  this.url = null;
   this.id = Tile.id++;
 };
 
@@ -66,6 +67,7 @@ var Board = function Board() {
   this.addRandomTile();
   this.setPositions();
   this.won = false;
+  this.total = 0;
 };
 
 Board.prototype.addTile = function () {
@@ -93,6 +95,7 @@ Board.prototype.moveLeft = function () {
         var tile2 = currentRow.shift();
         tile2.mergedInto = targetTile;
         targetTile.value += tile2.value;
+        this.total += targetTile.value;
       }
       resultRow[target] = targetTile;
       this.won |= targetTile.value == 2048;

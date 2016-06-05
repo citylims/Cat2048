@@ -103,7 +103,8 @@ var BoardView = function (_React$Component) {
         { className: 'board', onTouchStart: this.handleTouchStart.bind(this), onTouchEnd: this.handleTouchEnd.bind(this), tabIndex: '1' },
         cells,
         tiles,
-        React.createElement(GameEndOverlay, { board: this.state.board, onRestart: this.restartGame.bind(this) })
+        React.createElement(GameEndOverlay, { board: this.state.board, onRestart: this.restartGame.bind(this) }),
+        React.createElement(Scoreboard, { board: this.state.board, onRestart: this.restartGame.bind(this) })
       );
     }
   }]);
@@ -247,6 +248,19 @@ var GameEndOverlay = function GameEndOverlay(_ref) {
       { className: 'tryAgain', onClick: onRestart, onTouchEnd: onRestart },
       'Try again'
     )
+  );
+};
+
+var Scoreboard = function Scoreboard(_ref2) {
+  var board = _ref2.board;
+  var onRestart = _ref2.onRestart;
+
+  if (!board) return;
+  return React.createElement(
+    'h1',
+    null,
+    'Score: ',
+    board.total
   );
 };
 
