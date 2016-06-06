@@ -1,6 +1,8 @@
 2048-react
 ==========
-Cat themed [2048](https://github.com/IvanVergiliev/2048-react)
+Cat themed 2048 - [src](https://github.com/IvanVergiliev/2048-react)
+
+[Demo](citylims.github.io/Cat2048) 
 
     npm install -g node-static
     static -p 8000
