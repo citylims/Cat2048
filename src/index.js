@@ -158,9 +158,13 @@ var GameEndOverlay = ({board, onRestart}) => {
 };
 
 var Scoreboard = ({board, onRestart}) => {
+  console.log(board);
   if (!board) return;
   return (
-    <h1>Score: {board.total}</h1>  
+    <div className='scoreboard'> 
+      <h1 className='score total'>Score: {board.total}</h1>
+      <h1 className='score highscore'>HighScore: {board.highScore}</h1>
+    </div>
   )
 };
 

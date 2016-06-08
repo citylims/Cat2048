@@ -255,12 +255,23 @@ var Scoreboard = function Scoreboard(_ref2) {
   var board = _ref2.board;
   var onRestart = _ref2.onRestart;
 
+  console.log(board);
   if (!board) return;
   return React.createElement(
-    'h1',
-    null,
-    'Score: ',
-    board.total
+    'div',
+    { className: 'scoreboard' },
+    React.createElement(
+      'h1',
+      { className: 'score total' },
+      'Score: ',
+      board.total
+    ),
+    React.createElement(
+      'h1',
+      { className: 'score highscore' },
+      'HighScore: ',
+      board.highScore
+    )
   );
 };
 

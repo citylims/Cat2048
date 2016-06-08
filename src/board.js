@@ -67,6 +67,7 @@ var Board = function () {
   this.setPositions();
   this.won = false;
   this.total = 0;
+  this.highScore = this.getHighScore();
 }
 
 Board.prototype.addTile = function () {
@@ -93,6 +94,7 @@ Board.prototype.moveLeft = function () {
         tile2.mergedInto = targetTile;
         targetTile.value += tile2.value;
         this.total += targetTile.value;
+        this.highscore = this.getHighScore();
       }
       resultRow[target] = targetTile;
       this.won |= (targetTile.value == 2048);
@@ -178,3 +180,13 @@ Board.prototype.hasLost = function () {
   }
   return !canMove;
 };
+
+Board.prototype.getHighScore = function() {
+  var highScore =  parseInt(localStorage.getItem('highScore'));
+  if (!highScore || highScore === 0 || this.total > highScore) {
+    localStorage.setItem('highScore', this.total);
+    return this.total;
+  } else {
+    return highScore;
+  }
+}

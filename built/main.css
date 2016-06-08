@@ -178,3 +178,18 @@ body {
 
 .overlay .message {
   color: #666; }
+
+.scoreboard {
+  font-size: 14;
+  color: black;
+}
+
+.total {
+  margin: 0;
+  float: left;
+}
+
+.highscore {
+  margin: 0;
+  float: right;
+}
