@@ -255,7 +255,6 @@ var Scoreboard = function Scoreboard(_ref2) {
   var board = _ref2.board;
   var onRestart = _ref2.onRestart;
 
-  console.log(board);
   if (!board) return;
   return React.createElement(
     'div',

@@ -158,7 +158,6 @@ var GameEndOverlay = ({board, onRestart}) => {
 };
 
 var Scoreboard = ({board, onRestart}) => {
-  console.log(board);
   if (!board) return;
   return (
     <div className='scoreboard'> 
