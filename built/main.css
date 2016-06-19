@@ -193,3 +193,19 @@ body {
   margin: 0;
   float: right;
 }
+#imageLoader {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.image-loader-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-preview {
+  width: 100px;
+  height: 100px;
+  float: left;
+  padding: 0 20px;
+}
